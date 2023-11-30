@@ -21,7 +21,7 @@ const TaskForm = ({ onAddTask }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newTask = {
-      id: new Date().getTime(),
+      id: self.crypto.randomUUID(),
       name: taskName,
       description: description,
       completed: false,
