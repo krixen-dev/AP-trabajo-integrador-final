@@ -52,12 +52,12 @@ const TaskForm = ({ onAddTask }) => {
       <input type="text" value={taskName} onChange={handleInputChange} required placeholder='New task..' />
       <input type="text" value={description} onChange={handleDescriptionChange} placeholder="Description (optional)" />
       <select value={urgency} onChange={handleUrgencyChange} required>
-        <option value="" selected disabled>Urgency</option>
+        <option value="" disabled>Urgency</option>
         <option value="urgent" className='urgent'>urgent</option>
         <option value="low-urgency" className='low-urgency'>low urgency</option>
         <option value="no-urgency" className='no-urgency'>no urgency</option>
       </select>
-      <button type="submit">Add Task</button>
+      <button type="submit" className='button-submit'>Add Task</button>
     </form>
   );
 };

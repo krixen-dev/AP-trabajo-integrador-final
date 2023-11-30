@@ -15,16 +15,16 @@ const TaskItem = ({ task, onCompleteTask, onDeleteTask }) => {
   };
 
   return (
-    <div className='task-item' style={{ textDecoration: completed ? 'line-through' : 'none', color: urgencyColor }}>
-      <h3>
+    <div className='task-item' style={{ backgroundColor: completed ? '#4a4a4a' : urgencyColor }}>
+      <h3 style={{ textDecoration: completed ? 'line-through' : 'none', color: completed ? 'black' : 'white' }}>
         {task.name}
       </h3>
-      <p>
+      <p style={{ textDecoration: completed ? 'line-through' : 'none', color: completed ? 'black' : 'white' }}>
         {task.description}
       </p>
       <div className='container-button'>
         <button onClick={handleComplete}>{completed ? 'Undo' : 'Complete'}</button>
-        <button onClick={handleDelete}>Delete</button>
+        <button onClick={handleDelete} className='button-delete'>Delete</button>
       </div>
     </div>
   );
