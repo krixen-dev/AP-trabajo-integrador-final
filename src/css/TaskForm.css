@@ -1,0 +1,22 @@
+.task-form {
+  /* background-color: chartreuse; */
+  display: flex;
+  gap: .5em;
+}
+
+
+option {
+  background-color: transparent;
+}
+
+.urgent {
+  color: red;
+}
+
+.low-urgency {
+  color: blue;
+}
+
+.no-urgency {
+  color: green;
+}

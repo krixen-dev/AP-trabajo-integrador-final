@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import '../css/TaskItem.css'
 
 const TaskItem = ({ task, onCompleteTask, onDeleteTask }) => {
   const [completed, setCompleted] = useState(task.completed);
+  const [urgencyColor, setUrgencyColor] = useState(task.urgencyColor || 'white');
 
   const handleComplete = () => {
     setCompleted(!completed);
@@ -13,10 +15,17 @@ const TaskItem = ({ task, onCompleteTask, onDeleteTask }) => {
   };
 
   return (
-    <div style={{ textDecoration: completed ? 'line-through' : 'none' }}>
-      {task.name}
-      <button onClick={handleComplete}>{completed ? 'Undo' : 'Complete'}</button>
-      <button onClick={handleDelete}>Delete</button>
+    <div className='task-item' style={{ textDecoration: completed ? 'line-through' : 'none', color: urgencyColor }}>
+      <h3>
+        {task.name}
+      </h3>
+      <p>
+        {task.description}
+      </p>
+      <div className='container-button'>
+        <button onClick={handleComplete}>{completed ? 'Undo' : 'Complete'}</button>
+        <button onClick={handleDelete}>Delete</button>
+      </div>
     </div>
   );
 };
